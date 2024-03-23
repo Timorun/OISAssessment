@@ -9,6 +9,8 @@ public class Participant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pid;
     private String name;
+
+    @Column(unique = true) // Ensure no duplicate emails
     private String email;
 
     // @Column specification because in sql database phoneNumber column name is "phone_number"

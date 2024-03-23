@@ -1,3 +1,8 @@
+-- Drop all entries to prevent duplicate key violations and start fresh
+DELETE FROM admin;
+DELETE FROM participant;
+
+
 INSERT INTO admin (username, password) VALUES
                                            ('admin1', 'password1'),
                                            ('admin2', 'password2'),
