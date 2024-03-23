@@ -1,4 +1,4 @@
-package org.example;
+package com.assessment;
 
 
 import org.springframework.boot.SpringApplication;
