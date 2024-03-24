@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>List of signed up participants</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Participant ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="participant : ${participants}">
+    <td th:text="${participant.pid}"></td>
+    <td th:text="${participant.name}"></td>
+    <td th:text="${participant.email}"></td>
+    <td th:text="${participant.phoneNumber}"></td>
+    <td th:text="${participant.address}"></td>
+    <td>
+      <form th:action="@{'/admin/delete/' + ${participant.pid}}" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

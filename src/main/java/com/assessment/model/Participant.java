@@ -33,10 +33,6 @@ public class Participant {
         return pid;
     }
 
-    public void setPid(Long pid) {
-        this.pid = pid;
-    }
-
     public String getName() {
         return name;
     }

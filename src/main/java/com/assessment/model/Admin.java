@@ -1,7 +1,13 @@
 package com.assessment.model;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+
 
 @Entity
 @Table(name = "admin")

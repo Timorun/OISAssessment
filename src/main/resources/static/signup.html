@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
 </head>
 <body>
@@ -27,6 +26,7 @@
 
 <script>
     document.getElementById('signupForm').addEventListener('submit', function(event) {
+        // Ensures the form submission doesn't trigger the default browser behavior (reloading the page)
         event.preventDefault();
 
         var formData = {
