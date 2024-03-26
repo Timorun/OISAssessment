@@ -26,19 +26,30 @@ public class AdminController {
         return "admin_login";
     }
 
-    @PostMapping("/login")
-    public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        Model model) {
-        Admin admin = adminRepository.findByUsernameAndPassword(username, password);
-        if (admin != null) {
-            return "redirect:/admin/dashboard";
-        } else {
-            model.addAttribute("error", "Invalid username or password");
-            return "admin_login";
-        }
-    }
+//    @GetMapping("/logout")
+//    public String showSignup() {
+//        return "admin_login";
+//    }
 
+//    @PostMapping("/login")
+//    public String login(@RequestParam("username") String username,
+//                        @RequestParam("password") String password,
+//                        Model model) {
+//        Admin admin = adminRepository.findByUsernameAndPassword(username, password);
+//        if (admin != null) {
+//            return "redirect:/admin/dashboard";
+//        } else {
+//            model.addAttribute("error", "Invalid username or password");
+//            return "admin_login";
+//        }
+//    }
+
+
+//    @PostMapping("/signout")
+//    public String logout(Model model) {
+//        model.addAttribute("error", "You have signed out");
+//        return "admin_login";
+//    }
 
     // Admin dashboard
     @GetMapping("/dashboard")
@@ -48,7 +59,7 @@ public class AdminController {
         return "admin_dashboard";
     }
 
-    // Delete participant
+    // Eliminate participants
     @PostMapping("/delete/{pid}")
     public String deleteParticipant(@PathVariable("pid") Long pid) {
         participantRepository.deleteById(pid);

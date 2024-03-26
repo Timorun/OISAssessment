@@ -19,7 +19,16 @@
         <button type="submit">Login</button>
     </div>
     <div th:if="${error}" style="color: red">
-        <p th:text="${error}">Invalid username or password</p>
+<!--        Sets the text of the <p> element to text in ${error} variable. If ${error} empty, we display a default text-->
+        <p th:text="${error}">Authentication failed</p>
+    </div>
+
+<!--    For now double-->
+    <div th:if="${param.error}">
+        Authentication failed
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out
     </div>
 </form>
 </body>
